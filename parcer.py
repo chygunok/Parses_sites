@@ -26,14 +26,14 @@ class Parser:
 		new_list.pop(len(new_list)-1)
 		a = new_list.pop(len(new_list)-1)
 		for folder in new_list:
-			try:
+			if not (os.path.exists(os.path.join(root_path,folder))):
 				os.mkdir(os.path.join(root_path,folder))
 				root_path = root_path + folder + '/'
-			except FileExistsError:
-				os.path.join(root_path, folder)
+			else:
+				os.path.join(root_path,folder)
 				root_path = root_path + folder+ '/'
 		os.chdir(root_path)
-		self.file = open("{0}.txt".format(a),"w")
+		self.file = open("{0}.txt".format(a),"w", encoding="utf-8")
 
 	def parses_text(self):
 		strokes = ""
