@@ -19,7 +19,7 @@ class Parser:
 		self.list_text += text.split()
 
 	def create_file(self):
-		root_path = "D:/"
+		root_path = "C:/"
 		new_list = self.url.split('/')
 		new_list.pop(0)
 		new_list.pop(0)
@@ -60,6 +60,11 @@ if more_sym == '1':
 
 new_obj = Parser(url, int(max_symbol))
 uses_parse(new_obj)
+
+
+print("Hello world!")
+
+
 
 
 
